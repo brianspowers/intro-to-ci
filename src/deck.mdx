@@ -1,0 +1,320 @@
+# Intro to Build Systems
+
+--- 
+## Agenda
+
+<Step>
+
+- Continuous Integration / Continuous Delivery
+  - Background Information
+  - Essential Elements
+  - Other Useful Tools
+- Case Studies
+  - Wedgekit
+  - Hudl's Microservice Architecture
+
+</Step>
+
+--- 
+
+# Continuous Integration
+
+## What is CI?  
+
+<Note>
+  The practice of automating the integration of code changes from multiple contributors into a single software project.  
+</Note>
+
+--- 
+
+# Continuous Delivery
+
+- What is it?
+- How does it differ from CI?
+
+<Note>
+
+- The ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, safely and quickly in a sustainable way.
+
+</Note>
+
+---
+
+## What about Continuous Deployment?
+
+<Note>
+
+Automation.  Continuous Delivery ensures that the software *could- be deployed at any time.  Continuous Deployment automates the process.
+
+</Note>
+
+---
+
+# Why do these things?
+
+<Step>
+
+- Speed
+- Scaling
+- Quality
+
+</Step>
+
+<Note>
+
+- Speed
+  - Codebase deployable at all times
+  - Move fast while still ensuring quality
+- Scaling
+  - Processes in place allow work in isolation.  Parallel development.
+- Quality
+  - Faster feedback loop, bugs identified quickly.
+  - Communication improved - PRs, etc.
+
+</Note>
+
+--- 
+
+> "Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove." -Martin Fowler
+
+---
+
+#	Essentials
+
+<Step>
+
+- Version Control
+- Build Automation
+- Automated Testing
+
+</Step>
+
+---
+
+# Additional Features
+
+<Step>
+
+- Code Review
+- Unit, Integration, & Acceptance Testing
+- Static Analysis
+
+</Step>
+
+---
+
+# Tools and Services
+
+--- 
+
+# Build Servers
+
+<Step>
+
+- Cruise Control
+- Hudson / Jenkins
+- Bamboo
+- TeamCity
+- Team Foundation Server (Azure DevOps Server)
+
+</Step>
+
+<Note>
+
+- Software applications that you install and maintain  
+- Benefits: Keeping all code in-house  
+- Disadvantages: Maintenance  
+
+</Note>
+
+---
+
+# CI Service Providers
+
+<Step>
+
+- CircleCI
+- TravisCI
+- Azure Pipelines / DevOps Services
+- Github Actions
+- Amazon AWS Code(Build | Deploy | Pipeline)
+- CloudBees
+
+</Step>
+
+---
+
+# Questions?
+
+<Note>
+
+- Next up are case studies so any questions about the general concept stuff?
+
+</Note>
+
+---
+
+# Case Studies
+
+---
+
+# Case Study #1
+## Wedgekit at DMSi
+
+---
+
+# Version Control
+
+<Step>
+
+- Git
+- Atlassian Bitbucket
+- Git Flow
+
+</Step>
+
+---
+
+## The Monorepo
+
+- 47 Front-end javascript libraries
+- 2 Web applications
+- 3 utility applications
+
+All living in the same git repository.
+
+<Note>
+
+- Shared dependencies
+- Test the latest versions of all our software together.
+
+</Note>
+
+---
+
+## The Monorepo
+
+We have tools to help us manage everything under one roof.
+
+<Step>
+
+- Yarn Workspaces
+- Lerna
+
+</Step>
+
+---
+
+# Building and Testing
+
+<Step>
+
+- ESBuild
+- AVA
+- Codecov
+- Flow/Typescript
+- Wedgecop
+
+</Step>
+
+--- 
+
+# CircleCI
+
+## \<Screenshot\>
+
+---
+
+# "Template Fiddle"
+
+## \<Screenshot\>
+
+<Note>
+
+- For now, serves as our acceptance testing.
+- Integrates all the code that we maintain
+
+</Note>
+
+---
+
+# Publishing
+
+<Note>
+
+- Manual publishing, would like to get to continuous deployment.
+
+</Note>
+
+---
+
+# Questions?
+
+---
+
+# Case Study #2
+## Microservice Development at Hudl
+
+---
+
+# Testing Branches in Isolation
+
+--- 
+
+# Alyx3
+
+<Step>
+
+- In-house tool built to manage deploying code.
+- Ties together Teamcity, Eureka, Github, Amazon SNS, Route53, and Outpost
+
+</Step>
+
+---
+
+# Testing a Branch
+
+<Step>
+
+- Branch deployed to test server
+- Testing happens on a single feature
+- Quality Analyst merges the feature and deploys to production
+- Test branch cleaned up
+
+</Step>
+
+---
+
+# Blue-Green Deployment
+
+<Step>
+
+- 2 Sets of servers behind a router.
+- Deploy attempted to inactive set.
+- Automated health checks
+- Router to points to new application
+
+</Step>
+
+<Note>
+
+- The router is Nginx
+- At Hudl, both the "blue" and the "green" servers were actually part of the same server, the switching was done with application ports.
+
+</Note>
+
+---
+
+# Blue-Green Deployment
+
+<Step>
+
+- Allows deployment with little-to-no downtime
+- Deploy failures don't take the system down
+- Complicated unless all systems participate
+
+</Step>
+
+---
+
+# Fin
