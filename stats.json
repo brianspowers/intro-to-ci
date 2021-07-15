@@ -8,8 +8,8 @@
   ],
   "version": "4.46.0",
   "hash": "ad8bdc758c654d643f3e",
-  "time": 5852,
-  "builtAt": 1626363202914,
+  "time": 4400,
+  "builtAt": 1626363709238,
   "publicPath": "./",
   "outputPath": "/home/runner/work/intro-to-ci/intro-to-ci/dist/web",
   "assetsByChunkName": {
