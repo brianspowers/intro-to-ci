@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "yon run build:web && yon run build:onepage && yon run build:pdf",
-    "build:web": "cross-env MDXP_MODE=web PUBLIC_PATH=./ ANALYZE=true webpack --mode production",
+    "build:web": "cross-env MDXP_MODE=web PUBLIC_PATH=./ webpack --mode production",
     "build:onepage": "cross-env MDXP_MODE=onepage webpack --mode production && rimraf dist/onepage/*.js dist/onepage/*.css",
     "build:pdf": "pdf -u ./dist/onepage/index.html ./dist/presentation.pdf",
     "clean": "rimraf dist/**/* dist/*.pdf",
